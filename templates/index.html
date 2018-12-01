@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+	h1 {
+		text-decoration: underline;
+	}
+	.link {
+		color: green;
+		font-family: 'Lato', sans-serif;
+	}
+	a {
+		text-align: center;
+	}
+</style>
+	<h1>See all your Courses</h1>
+
+	<a href="{{url_for('new')}}">Add a new Course</a><br>	
+{% for student in students %}
+	<p>
+		<a href="{{url_for('show', id=student.id)}}">{{student.first_name}} {{student.last_name}}</a>
+	</p>
+{% endfor %}
+			<h4><a class="link" href="http://127.0.0.1:5000">Go To The Home Page </a></h4>
+{% endblock %}

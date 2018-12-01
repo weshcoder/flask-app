@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+		
+{% block content %}	
+<style type="text/css">
+	button {
+		background:black; 	
+	}
+	i {
+		color: red;
+	}
+	h1	{
+		text-decoration: underline;
+	}
+	.link{
+			text-decoration: none;
+			color: black;
+		}	
+</style>
+			<h1>See some information about {{ student.first_name }}</h1></a>
+
+		<a class="link" href="{{url_for('edit', id=student.id)}}">Edit this Course!</a>
+
+		<h2>Delete your Course!</h2>
+		<i class="fa fa-arrow-down" height="100px"></i>
+	
+		<form method="POST" action="{{url_for('show', id=student.id)}}?_method=DELETE">
+		<button><i class="fa fa-trash"></i></button>
+		</form>
+{% endblock %}
